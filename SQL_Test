@@ -107,3 +107,9 @@ FROM Worker W1
 JOIN Worker W2 
 ON W1.SALARY = W2.SALARY AND W1.WORKER_ID <> W2.WORKER_ID
 ORDER BY W1.SALARY;
+
+-- 10. Fetch the departments that have less than three people in it
+SELECT DEPARTMENT 
+FROM Worker 
+GROUP BY DEPARTMENT 
+HAVING COUNT(*) < 3;
